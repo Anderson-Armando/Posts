@@ -7,13 +7,14 @@ using System.Net.Http;
 using ExemploHttp.Models;
 using System.Diagnostics;
 using System.Text.Json;
+using System.Collections.ObjectModel;
 namespace ExemploHttp.Services
 {
 	public class RestService
 	{
 		private HttpClient client;
         private Post post;
-        private List<Post> posts;
+        private ObservableCollection<Post> posts;
 		private JsonSerializerOptions serializerOptions;
         public RestService()
         {
@@ -25,7 +26,7 @@ namespace ExemploHttp.Services
 
 		}
 
-        public async Task<List<Post>> getPostAsync()
+        public async Task<ObservableCollection<Post>> getPostAsync()
         {
 		
 			Uri uri = new Uri("https://jsonplaceholder.typicode.com/posts");
@@ -35,7 +36,7 @@ namespace ExemploHttp.Services
 				if (response.IsSuccessStatusCode)
 				{
 					string content = await response.Content.ReadAsStringAsync();
-					posts = JsonSerializer.Deserialize<List<Post>>(content, serializerOptions);
+					posts = JsonSerializer.Deserialize<ObservableCollection<Post>>(content, serializerOptions);
 				}
 			}
 			catch (Exception ex)
