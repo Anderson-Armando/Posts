@@ -4,8 +4,10 @@
              x:Class="ExemploHttp.View.PostsView"
              >
     <VerticalStackLayout>
-        <Button Command="{Binding getPostCommand}" 
-                Text="Carregar Imagem"/>
+        <Button Command="{Binding getPostsCommand }" 
+                Text="Carregar Imagem"
+                Margin="100"
+                />
         <ScrollView>
             <CollectionView ItemsSource="{Binding Posts}">
                 <CollectionView.ItemTemplate>

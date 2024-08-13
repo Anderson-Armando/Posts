@@ -16,16 +16,17 @@ namespace ExemploHttp.ViewModels
         [ObservableProperty]
         ObservableCollection<Post> posts;
 
-        public ICommand getPostsCommand;
+        public ICommand getPostsCommand { get; }
 
-        public PostsViewModels() {
+        public PostsViewModels()
+        {
             getPostsCommand = new Command(getPosts);
         }
 
         public async void getPosts()
         {
             RestService restService = new RestService();
-            posts = await restService.getPostAsync();
+            Posts = await restService.getPostAsync();
         }
     }
 }
