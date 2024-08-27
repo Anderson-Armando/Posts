@@ -23,7 +23,6 @@ namespace ExemploHttp.Services
 					PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
 					WriteIndented = true
 			};
-
 		}
 
         public async Task<ObservableCollection<Post>> getPostAsync()

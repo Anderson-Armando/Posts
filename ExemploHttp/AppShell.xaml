@@ -8,7 +8,7 @@
     Title="ExemploHttp">
 
     <ShellContent
-        ContentTemplate="{DataTemplate local:PostsView}"
+        ContentTemplate="{DataTemplate local:ImagesView}"
         Route="MainPage" />
 
 </Shell>
